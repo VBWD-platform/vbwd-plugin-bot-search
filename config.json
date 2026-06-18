@@ -1,0 +1,27 @@
+{
+  "include_shop_product": {
+    "type": "boolean",
+    "default": true,
+    "description": "Include shop products in /search results."
+  },
+  "include_booking_resource": {
+    "type": "boolean",
+    "default": true,
+    "description": "Include bookable resources in /search results."
+  },
+  "include_ghrm_package": {
+    "type": "boolean",
+    "default": true,
+    "description": "Include software packages in /search results."
+  },
+  "include_subscription_plan": {
+    "type": "boolean",
+    "default": true,
+    "description": "Include subscription plans in /search results."
+  },
+  "debug_mode": {
+    "type": "boolean",
+    "default": false,
+    "description": "Enable verbose server-side debug logging for the search bot. Disable in production."
+  }
+}

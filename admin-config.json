@@ -1,0 +1,40 @@
+{
+  "tabs": [
+    {
+      "id": "general",
+      "label": "General",
+      "fields": [
+        {
+          "key": "include_shop_product",
+          "label": "Include shop products",
+          "component": "checkbox",
+          "description": "Show shop products in /search results."
+        },
+        {
+          "key": "include_booking_resource",
+          "label": "Include bookable resources",
+          "component": "checkbox",
+          "description": "Show bookable resources in /search results."
+        },
+        {
+          "key": "include_ghrm_package",
+          "label": "Include software packages",
+          "component": "checkbox",
+          "description": "Show software packages in /search results."
+        },
+        {
+          "key": "include_subscription_plan",
+          "label": "Include subscription plans",
+          "component": "checkbox",
+          "description": "Show subscription plans in /search results."
+        },
+        {
+          "key": "debug_mode",
+          "label": "Debug mode",
+          "component": "checkbox",
+          "description": "Verbose server-side logging for the search bot. Disable in production."
+        }
+      ]
+    }
+  ]
+}
