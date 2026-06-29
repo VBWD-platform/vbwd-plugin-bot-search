@@ -73,7 +73,7 @@ class BotSearchPlugin(BasePlugin):
     def metadata(self) -> PluginMetadata:
         return PluginMetadata(
             name="bot-search",
-            version="26.6",
+            version="26.6.1",
             author="VBWD Team",
             description=(
                 "A /search command that finds catalog entities (shop products, "
