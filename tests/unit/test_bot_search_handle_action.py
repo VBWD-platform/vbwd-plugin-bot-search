@@ -120,9 +120,7 @@ def test_view_key_with_colon_is_parsed_intact(clean_search_registry):
         title="Weird",
         url="/shop/product/weird:key",
     )
-    clean_search_registry.register(
-        FakeSearchProvider("shop_product", "Shop", [hit])
-    )
+    clean_search_registry.register(FakeSearchProvider("shop_product", "Shop", [hit]))
     plugin = _plugin()
 
     reply = plugin.handle_action(
@@ -167,9 +165,7 @@ def test_query_falls_back_to_text_after_slash_search(
 def test_tapping_a_missing_result_degrades_gracefully(clean_search_registry):
     plugin = _plugin()
 
-    reply = plugin.handle_action(
-        _inbound(action_data="search:view:shop_product:gone")
-    )
+    reply = plugin.handle_action(_inbound(action_data="search:view:shop_product:gone"))
 
     assert "no longer available" in reply.text.lower()
     assert reply.choices == []
@@ -195,9 +191,7 @@ def test_total_results_capped(clean_search_registry):
     ]
     # limit_per_provider is 5, so a single provider already caps at 5 here; add a
     # second provider to exceed the total cap and confirm the slice.
-    clean_search_registry.register(
-        FakeSearchProvider("shop_product", "Shop", hits)
-    )
+    clean_search_registry.register(FakeSearchProvider("shop_product", "Shop", hits))
     clean_search_registry.register(
         FakeSearchProvider("booking_resource", "Booking", hits)
     )
