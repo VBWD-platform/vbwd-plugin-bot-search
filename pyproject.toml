@@ -1,0 +1,41 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "vbwd-plugin-bot-search"
+version = "26.6.1"
+description = "VBWD backend plugin: bot_search"
+requires-python = ">=3.11"
+license = { text = "BSL-1.1" }
+dependencies = []
+
+# Runtime lives inside the vbwd-backend host, which provides `vbwd.*` (core) and
+# any sibling plugins declared in PluginMetadata.dependencies. Those are NOT pinned
+# here so the wheel stays host-agnostic; install the host separately.
+
+[tool.setuptools]
+# The repo root IS the plugins/bot_search/ directory; remap it so the wheel exposes
+# the `plugins.bot_search` package that runtime imports (e.g. `from plugins.bot_search...`).
+package-dir = { "plugins.bot_search" = "." }
+packages = [
+    "plugins.bot_search",
+]
+
+[tool.setuptools.package-data]
+# Ship everything a pip-installed plugin needs to be self-complete: config JSON,
+# Alembic migrations (the shared backend env.py resolves version_locations from
+# the installed package path), seed scripts, and bin/ helpers.
+"plugins.bot_search" = [
+    "*.json",
+    "migrations/*.py",
+    "migrations/*.mako",
+    "migrations/*.ini",
+    "migrations/**/*.py",
+    "migrations/**/*.mako",
+    "populate_db.py",
+    "populate_*.py",
+    "demo_seed.py",
+    "bin/*",
+    "bin/**/*",
+]
