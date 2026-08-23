@@ -69,3 +69,11 @@ Routed back to `handle_action` by the dispatcher's command/namespace index
 ```
 cd vbwd-backend && bin/pre-commit-check.sh --plugin bot_search --full
 ```
+
+## Documentation
+
+Full platform documentation lives at **[vbwd.cc/docs](https://vbwd.cc/docs)**.
+
+- [Plugin system](https://vbwd.cc/docs-plugin-system) — how backend plugins are registered, enabled, and configured
+- [Architecture](https://vbwd.cc/docs-architecture) — platform layering and the core-agnosticism rule
+- [Getting started](https://vbwd.cc/docs-getting-started) — install a VBWD instance and enable plugins
